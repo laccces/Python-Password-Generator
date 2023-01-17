@@ -15,15 +15,10 @@ def word_picker():
     num = random.randrange(0, 5)
     return word_list[num]
 
-def random_number():
-    number = random.randrange(100, 1000)
-    return number
-
 def password_generator():
     first_word = word_picker()
     password.append(first_word.capitalize())
-    number = random_number()
-    password.append(str(number))
+    password.append(str(random.randrange(100, 1000)))
     second_word = word_picker()
     password.append(second_word)
     print("".join(password))
