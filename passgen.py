@@ -1,7 +1,6 @@
 import random
 
 word_list = []
-password = []
 
 def generate_words():
     f = open("words.txt", "r")
@@ -16,17 +15,10 @@ def word_picker():
     return word_list[num]
 
 def password_generator():
-    first_word = word_picker()
-    password.append(first_word.capitalize())
-    password.append(str(random.randrange(100, 1000)))
-    second_word = word_picker()
-    password.append(second_word)
-    print("".join(password))
+    print(f"{word_picker().capitalize()}{random.randrange(100,1000)}{word_picker()}")
 
 i = 0
 
 while i < 5:
     password_generator()
-    password = []
     i += 1
-
